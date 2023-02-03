@@ -4,18 +4,19 @@
 	namespace="com.TeamName.mapper.BoardMapper">
 	
 	<!-- 
-	<select id="ApartmentsAllList" resultType="ApartmentsVO">
+	<select id="boardAllList" resultType="map">
 		SELECT
-			apartments_no AS apartmentsNo,
-			apartments_name AS apartmentsName,
-			price,
-			addr,
-			gu,
-			DATE_FORMAT(create_at,'%Y') AS createAt,
-			latitude,
-			longitude
-		FROM 
-			apartments
+			b.board_id AS boardId ,
+			s.students_id AS studentsId ,
+			s.students_name AS studentsName,
+			b.title AS title ,
+			b.content AS content ,
+			IFNULL(Date_format(b.update_at, '%Y-%m-%d'), "-") AS updateAt ,
+			Date_format(b.create_at, '%Y-%m-%d') AS createAt,
+			b.cnt AS cnt
+		FROM board AS b
+		INNER JOIN students AS s
+		on b.students_id = s.students_id
 	</select>
 	 -->
 </mapper>
