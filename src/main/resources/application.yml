@@ -25,3 +25,4 @@ spring:
 mybatis:
   #매퍼
   mapper-locations: sqlmap/*.xml
+
