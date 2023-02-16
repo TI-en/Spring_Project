@@ -1,0 +1,27 @@
+server:
+  #서버
+  port: 9090
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  #뷰
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  #오라클 
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521:XE
+    username: admin
+    password: oracle
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+
+mybatis:
+  #매퍼
+  mapper-locations: sqlmap/*.xml
